@@ -53,9 +53,11 @@ parse_and_assert_rule(Line) :-
         % Process responses
         maplist(response_transform, RespStrings, RespAtoms),
         assertz(pattern_rule(Weight, PatternTokens, RespAtoms)),
-        writeln(['[Rule OK]:', Weight, PatternTokens, '=>', RespAtoms])
+        writeln(['[Rule OK]:', Weight, PatternTokens, '=>', RespAtoms]),
+        writeln(['DEBUG RULES - Pattern tokens:', PatternTokens]),
+        writeln(['DEBUG RULES - Response atoms:', RespAtoms])
     ; writeln(['[ERROR] Not enough parts in line:', Line]) ).
-    
+
 % Transform pattern tokens - handle wildcards
 pattern_token_transform("*", '_') :- !.
 pattern_token_transform("**", '__') :- !.

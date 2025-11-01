@@ -11,9 +11,15 @@ select_reply(InputTokens, ReplyTokens) :-
         pattern_matches(PatternList, InputTokens, Captures),
         Resp = (RespAtoms-Captures)
     ), Candidates),
+    
+    % DEBUG: Show what we found
+    writeln(['DEBUG - Input:', InputTokens]),
+    writeln(['DEBUG - Candidates:', Candidates]),
+    
     Candidates \= [],
     keysort(Candidates, SortedAsc),
     reverse(SortedAsc, Sorted),         % highest first
+    
     % pick first candidate that doesnt equal last reply if possible
     ( last_reply(Prev) ->
         ( select(_- (RespAtoms-Captures), Sorted, Rest),
@@ -21,12 +27,22 @@ select_reply(InputTokens, ReplyTokens) :-
         ; Sorted = [_-Chosen|_]
         )
     ; Sorted = [_-Chosen|_] ),
+    
     % pick a random response variant from RespAtoms
     Chosen = (RespAtoms-Captures),
     ( is_list(RespAtoms) -> random_member(RawResp, RespAtoms) ; RawResp = RespAtoms ),
+    
+    % DEBUG: Show selected response and captures
+    writeln(['DEBUG - Selected response:', RawResp]),
+    writeln(['DEBUG - Captures:', Captures]),
+    
     % process placeholders and transforms
     phrase_to_tokens(RawResp, RawTokens),
+    writeln(['DEBUG - Raw tokens:', RawTokens]),
+    
     fill_placeholders(RawTokens, Captures, Filled),
+    writeln(['DEBUG - Filled tokens:', Filled]),
+    
     % save last reply
     retractall(last_reply(_)),
     assertz(last_reply(RawResp)),
@@ -37,9 +53,9 @@ select_reply(_, ['I', 'see.', 'Please', 'tell', 'me', 'more.']) :-
     writeln('[WARNING] No matching rules found, using fallback').
 
 % pattern_matches supports '_' wildcard capturing rest or a single token.
-% For simplicity, '_' captures the next token and '__' captures rest of line.
 pattern_matches(PatternList, InputTokens, Captures) :-
-    pattern_matches_(PatternList, InputTokens, [], Captures).
+    pattern_matches_(PatternList, InputTokens, [], RevCaptures),
+    reverse(RevCaptures, Captures).
 
 pattern_matches_([], [], Caps, Caps).
 pattern_matches_(['_'|P], [H|T], Acc, Caps) :-
@@ -60,13 +76,22 @@ phrase_to_tokens(Atom, Tokens) :-
     split_string(Atom, " ", "", Parts),
     maplist(atom_string, Tokens, Parts).
 
-% Replace placeholder token "__" or "__cap" with captured text(s)
+% Replace placeholder token "*" with captured text(s)
 fill_placeholders([], _Caps, []).
 fill_placeholders([Tok|Rest], Caps, [OutTok|RestOut]) :-
-    ( Tok = "__" ->
-        ( Caps = [C|_] -> OutTok = C ; OutTok = "" )
-    ; Tok = "____" ->  % double placeholder: join all captures
-        atomic_list_concat(Caps, ' ', All), OutTok = All
+    ( Tok = '*' ->  % Use atom '*' not string "*"
+        ( Caps = [C|_] -> 
+            writeln(['DEBUG - Replacing * with:', C]),  % DEBUG
+            OutTok = C 
+        ; writeln('DEBUG - No capture for *'),  % DEBUG
+          OutTok = '' 
+        )
+    ; Tok = '**' ->  % double placeholder: join all captures
+        ( Caps = [] -> OutTok = ""
+        ; atomic_list_concat(Caps, ' ', All), 
+          writeln(['DEBUG - Replacing ** with:', All]),  % DEBUG
+          OutTok = All 
+        )
     ; OutTok = Tok
     ),
     fill_placeholders(Rest, Caps, RestOut).

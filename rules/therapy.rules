@@ -4,4 +4,6 @@
 6 | sad | I'm sorry to hear you're sad. Would you like to say more? | That sounds painful. What is the hardest part?
 5 | happy | That's good to hear. What's contributing to that feeling?
 4 | family | You mentioned family before. Can you tell me more about them?
-1 | * | Please tell me more.
+3 | work | Tell me more about your work | How do you feel about work?
+2 | stressed | Stress can be difficult. What triggers your stress? | Let's talk about what's causing your stress
+1 | * | Please tell me more | Can you elaborate on that? | What does that mean to you?
