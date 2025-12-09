@@ -23,7 +23,6 @@ loop :-
       normalize_input_atom(A, NormAtom),
       tokenize(NormAtom, InputTokens),
       learn(InputTokens),
-      ( fact(_) -> show_facts ; true ),
       select_reply(InputTokens, Reply),
       atomic_list_concat(Reply, ' ', ReplyAtom),
       write('ELIZA: '), write(ReplyAtom), nl,

@@ -1,9 +1,143 @@
-9 | i feel * | I hear that you feel * | It sounds like you are * | Thank you for sharing that you feel *
-8 | i am * | You say you are * . What does that mean to you? | When you say you are * , how does that affect you?
-7 | because * | I see. Can you explain more about * | That makes sense — tell me more about *
-6 | sad | I'm sorry to hear you're sad. Would you like to say more? | That sounds painful. What is the hardest part?
-5 | happy | That's good to hear. What's contributing to that feeling?
-4 | family | You mentioned family before. Can you tell me more about them?
-3 | work | Tell me more about your work | How do you feel about work?
-2 | stressed | Stress can be difficult. What triggers your stress? | Let's talk about what's causing your stress
-1 | * | Please tell me more | Can you elaborate on that? | What does that mean to you?
+% =========================
+% VERY SPECIFIC SITUATIONS
+% =========================
+
+30 | my * made me come here | Your * made you come here ? | Do you want to talk more about your * ?
+28 | my * thinks i need help | Your * thinks you need help ? | How do you feel about your * thinking that ?
+
+26 | she says i am ** | I am sorry to hear you are ** . | Why do you think he says you are ** ?
+26 | he says i am ** | I am sorry to hear you are ** . | Why do you think he says you are ** ?
+26 | they say i am ** | They say you are ** . How does that make you feel ? | Why do you think they say you are ** ?
+
+24 | i'm unhappy | Do you think coming here will help you not to be unhappy ? | How long have you been unhappy ?
+24 | i am unhappy | Do you think coming here will help you not to be unhappy ? | How long have you been unhappy ?
+
+24 | i'm depressed | I am sorry to hear you feel depressed . | How long have you been feeling depressed ?
+24 | i am depressed | I am sorry to hear you feel depressed . | How long have you been feeling depressed ?
+
+% ============
+% FEELINGS
+% ============
+
+20 | i feel ** | I hear that you feel ** . | It sounds like you are ** . | Thank you for sharing that you feel ** .
+19 | i am ** | You say you are ** . What does that mean to you ? | When you say you are ** , how does that affect you ?
+
+18 | i feel sad ** | I am sorry to hear you feel sad . | What do you think is making you feel sad ?
+18 | i feel happy ** | It is nice that you feel happy . | What is contributing to that happiness ?
+18 | i feel anxious ** | Feeling anxious can be difficult . What tends to trigger your anxiety ? | How do you usually cope with that anxiety ?
+18 | i feel lonely ** | Feeling lonely can be painful . When do you notice that loneliness the most ? | Who do you wish you could talk to about this ?
+
+17 | i am sad | I am sorry to hear you are sad . Would you like to say more ? | That sounds painful . What is the hardest part ?
+17 | i am happy | That is good to hear . What is contributing to that feeling ?
+17 | i am anxious | Anxiety can be overwhelming . What situations make you feel that way ? | How do you usually deal with that anxiety ?
+17 | i am lonely | Loneliness can hurt . When do you feel the most lonely ?
+
+16 | sad ** | I am sorry to hear you are sad . Would you like to say more ? | What do you think lies behind that sadness ?
+16 | happy ** | That is good to hear . What is helping you feel happy ?
+16 | anxious ** | Anxiety sounds present for you . What makes it stronger or weaker ? 
+16 | lonely ** | Loneliness sounds present for you . What makes it better or worse ?
+
+% ===================
+% WORK / SCHOOL / STUDY
+% ===================
+
+15 | work ** | Tell me more about your work . | How do you feel about work these days ?
+15 | my job ** | Your job seems important to you . What is it like for you there ? | How satisfied are you with your job ?
+15 | study ** | Studying can be stressful . What is most difficult about studying for you ?
+15 | exams ** | Exams often bring pressure . What worries you most about your exams ?
+
+% ============
+% RELATIONSHIPS
+% ============
+
+14 | my family ** | You mentioned your family . Can you tell me more about them ? | How are things in your family these days ?
+14 | my parents ** | Your parents seem important here . What are they like ? | How do you feel about your relationship with your parents ?
+14 | my friends ** | Your friends sound significant . What role do they play in your life ?
+14 | my girlfriend ** | Your girlfriend seems important to you . How are things between you and your girlfriend ?
+14 | my boyfriend ** | Your boyfriend seems important to you . How are things between you and your boyfriend ?
+14 | relationship ** | Relationships can be complex . What feels most important in this relationship right now ?
+
+% ==================
+% SELF-IMAGE / SELF-TALK
+% ==================
+
+13 | i hate myself ** | It sounds like you are very hard on yourself . Why do you think you feel this way about yourself ? | Where do you think this self hatred comes from ?
+13 | i hate my * | You say you hate your * . What makes you feel that way about your * ?
+13 | i am a failure ** | You feel like a failure . What makes you see yourself that way ? | Has anyone made you feel like a failure ?
+13 | i am not good enough ** | You feel not good enough . For whom do you feel you must be good enough ?
+
+12 | i can't ** | You feel you cannot ** . What makes you think you cannot ** ? | Have there been times when you could ** before ?
+12 | i cannot ** | You feel you cannot ** . What makes you think you cannot ** ? | What might help you feel more able to ** ?
+
+% ==============
+% CAUSALITY / EXPLANATIONS
+% ==============
+
+11 | because ** | I see . Can you explain more about ** ? | That makes sense - tell me more about ** .
+11 | why ** | Why do you think ** ? | What does ** mean to you ?
+11 | what if ** | You are wondering what if ** . What do you imagine would happen ?
+
+% ==============
+% USER ASKS ABOUT YOU (THE BOT)
+% ==============
+
+10 | do you ** | We are here to talk about you , not so much about me . How do you feel when you ask that ? | What makes you curious about whether I ** ?
+10 | who are you | I am an AI program that tries to reflect your thoughts and feelings back to you . What is it like to talk to me ?
+10 | are you real | I am a computer program , but your feelings in this conversation are real . What is it like for you to think about that ?
+
+% ==========
+% AGREEMENT / DISAGREEMENT
+% ==========
+
+9 | yes | Tell me more about that . | What makes you say yes ?
+9 | no | Why not ? | What makes you say no ?
+9 | maybe ** | You sound unsure . What might help you decide about ** ?
+9 | i guess ** | It sounds like you are uncertain . What keeps you from being more sure about ** ?
+
+% ==========
+% CONFUSION / NOT KNOWING
+% ==========
+
+8 | i dont know ** | It is okay not to know . What makes it hard to see this clearly ? | If you did know , what might the answer be ?
+8 | i am confused ** | You feel confused . What are the different parts you are confused about ? | What would help you feel less confused ?
+8 | i am not sure ** | You sound unsure . What makes you hesitate about ** ?
+
+% ==========
+% GREETINGS / SMALL TALK
+% ==========
+
+7 | hello | Hello . How are you feeling today ? | Hello . What would you like to talk about today ?
+7 | hi | Hi . How are you feeling today ? | Hi . What is on your mind ?
+7 | hey | Hey . What is on your mind today ?
+7 | good morning | Good morning . How are you feeling today ?
+7 | good evening | Good evening . How has your day been so far ?
+
+7 | how are you | I am here to listen to you . How are you feeling ? | I am a program , but I am curious how you are doing .
+
+% ==========
+% STRESS / PRESSURE
+% ==========
+
+6 | stressed ** | Stress can be difficult . What triggers your stress ? | Let us talk about what is causing your stress .
+6 | under pressure ** | It sounds like you are under pressure . Where do you feel that pressure the most ? | Who or what do you feel is putting this pressure on you ?
+6 | overwhelmed ** | Feeling overwhelmed can be very hard . What feels like too much right now ?
+
+% ==========
+% GENERIC EMOTIONAL STATEMENTS
+% ==========
+
+5 | i feel like ** | You feel like ** . What makes you feel that way ? | How often do you feel like ** ?
+5 | it feels like ** | It feels like ** to you . What else does it feel like ? | What happens in you when it feels like ** ?
+
+% ==========
+% CLOSING / END OF CONVERSATION
+% ==========
+
+4 | goodbye | Goodbye . I hope talking helped a little . | Goodbye . Thank you for sharing with me .
+4 | bye | Bye . Take care of yourself . | Bye . I appreciate you talking with me .
+
+% ==========
+% FALLBACK
+% ==========
+
+1 | ** | Please tell me more . | Can you elaborate on that ? | What does that mean to you ?
